@@ -1,0 +1,40 @@
+#main {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#words {
+    width: 670px;
+    height: 200px;
+}
+
+#convert{
+    background-color: blue;
+    color: aliceblue;
+}
+
+#clear_1{
+    background-color: green;
+    color: aliceblue;
+}
+
+#copy_result{
+    background-color: peachpuff;
+    color: black;
+}
+
+button {
+    width: 100px;
+    height: 50px;
+    cursor: pointer;
+}
+
+button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }

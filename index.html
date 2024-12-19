@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Text</title>
+
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    
+    <script>
+        function clear1(){
+            const test = "";
+            document.getElementById("result").innerHTML = test;
+            document.getElementById("words").value = test;
+        }
+    </script>
+    <script> 
+        function titleCase(){
+            const str = document.getElementById("words").value;
+            const words = str.toLowerCase().split(" ");
+            for(let i = 0; i < words.length; i++) {
+
+            if (words[i] == "llc") {
+            words[i] = "LLC";
+            } else if (words[i] == "usa"){
+            words[i] = "USA";
+            } else {
+            words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+            };
+            }; 
+            //return words.join(" ");
+
+            document.getElementById("result").innerHTML = words.join(" ");
+        }
+    </script>
+
+    <script>
+        function copyToClipboard(text) {
+            if (navigator.clipboard && window.isSecureContext) {
+                return navigator.clipboard.writeText(text);
+                
+            } else {
+                // Fallback for older browsers (see method 2 below)
+                return fallbackCopyToClipboard(text);
+            }
+        }
+       
+    </script>
+    
+    <div id="main">
+        <h1>Convert To Title Case</h1>
+
+        <textarea id="words" placeholder="Type or paste your content here" autofocus=""></textarea><br>
+
+        <button id="convert" onclick="titleCase()"> Convert </button>
+        <button id="clear_1" onclick="clear1()"> Clear </button>
+        <button id="copy_result" onclick="copyToClipboard(document.getElementById('result').innerHTML)"> Copy Result </button>
+    
+        <p id="result"></p>
+    </div>
+    
+    <script>
+        const contentDiv = document.getElementById('result');
+        document.getElementById("copy_result").addEventListener('click', async () => {
+            try {
+                const text = await navigator.clipboard.readText();
+                alert(`Result Copied: ${text}`);
+            } catch (err) {
+                console.error('Failed to read clipboard: ', err);
+                alert("Failed to read clipboard");
+            }    
+        });
+    </script>
+ 
+</body>
+</html>
