@@ -16,6 +16,7 @@ const threeLetters = new Set([ // Use a Set for efficient lookups
 
 function clear1(){
     const test = "";
+    const result = "";
     resultContent.innerHTML = test;
     document.getElementById("words").value = test;
 }
@@ -36,7 +37,9 @@ function titleCase(){
         }
     });
     
-    resultContent.innerHTML = titleCasedWords.join(" ");
+    result = titleCasedWords.join(" ").replace(/\s+(?=[,])/g, "");
+
+    resultContent.innerHTML = result;
 };
 
 function copyToClipboard(text) {
