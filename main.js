@@ -6,8 +6,8 @@ const States = new Set([ // Use a Set for efficient lookups
     "ma", "mi", "mn", "ms", "mo", "mt", "ne", "nv", "nh", "nj",
     "nm", "ny", "nc", "nd", "oh", "ok", "or", "pa", "ri", "sc",
     "sd", "tn", "tx", "ut", "vt", "va", "wa", "wv", "wi", "wy",
-    "AB", "BC", "MB", "NB", "NL", "NS", "NT", "NU", "ON", "PE",
-    "QC", "SK", "YT"
+    "on", "nu", "yt", "qc", "ns", "nl", "nt", "ab", "nb", "sk", 
+    "mb", "bc", "pe"
 ]);
 
 const threeLetters = new Set([ // Use a Set for efficient lookups
